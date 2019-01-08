@@ -1,2 +1,3 @@
 # CSU-San-Marcos
-Contains assignments made across each of my university courses
+Contains programming assignments made across each of my university courses
+Primarily consists of CS-speciic courses, but also includes a few math courses as well
