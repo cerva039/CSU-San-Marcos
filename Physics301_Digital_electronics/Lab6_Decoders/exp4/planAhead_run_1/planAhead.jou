@@ -1,0 +1,39 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Tue Oct 09 12:34:30 2018
+# Process ID: 5340
+# Log file: C:/Users/Chris/Documents/School/7th Year/Fall 2018/Phys301/Programs/lab6/Experiment4/exp4/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/Chris/Documents/School/7th Year/Fall 2018/Phys301/Programs/lab6/Experiment4/exp4/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {C:/Users/Chris/Documents/School/7th Year/Fall 2018/Phys301/Programs/lab6/Experiment4/exp4/pa.fromNetlist.tcl}
+set_property package_pin "" [get_ports [list  {kCol[0]}]]
+set_property package_pin "" [get_ports [list  {kCol[1]}]]
+set_property package_pin "" [get_ports [list  {kCol[2]}]]
+set_property package_pin "" [get_ports [list  {kCol[3]}]]
+startgroup
+set_property package_pin C12 [get_ports {kRow[3]}]
+endgroup
+startgroup
+set_property package_pin A13 [get_ports {kRow[2]}]
+endgroup
+startgroup
+set_property package_pin C13 [get_ports {kRow[1]}]
+endgroup
+startgroup
+set_property package_pin D12 [get_ports {kRow[0]}]
+endgroup
+startgroup
+set_property package_pin A9 [get_ports {kCol[3]}]
+endgroup
+startgroup
+set_property package_pin B9 [get_ports {kCol[2]}]
+endgroup
+startgroup
+set_property package_pin A10 [get_ports {kCol[1]}]
+endgroup
+startgroup
+set_property package_pin C9 [get_ports {kCol[0]}]
+endgroup
+save_constraints

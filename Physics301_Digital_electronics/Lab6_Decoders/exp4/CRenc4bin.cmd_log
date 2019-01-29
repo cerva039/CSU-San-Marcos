@@ -1,0 +1,2 @@
+vhdtdtfi -lib work CRenc4bin.vhd -prj exp4 -o CRenc4bin.spl -module CRenc4bin -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e CRenc4bin.spl {C:/Users/Chris/Documents/School/7th Year/Fall 2018/Phys301/Programs/lab6/Experiment4/exp4/CRenc4bin.sym} 

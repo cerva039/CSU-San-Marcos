@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Chris\Documents\School\7th Year\Fall 2018\Phys301\Programs\lab6\Experiment4\exp4\exp4.ncd
+OUTFILE=C:\Users\Chris\Documents\School\7th Year\Fall 2018\Phys301\Programs\lab6\Experiment4\exp4\exp4.bit
+FAMILY=Spartan3E
+PART=xc3s100e-4cp132
+WORKINGDIR=C:\Users\Chris\Documents\School\7th Year\Fall 2018\Phys301\Programs\lab6\Experiment4\exp4
+LICENSE=WebPack
+USER_INFO=211594250_0_0_673
