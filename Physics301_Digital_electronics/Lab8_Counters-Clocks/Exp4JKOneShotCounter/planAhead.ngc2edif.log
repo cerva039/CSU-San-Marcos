@@ -1,0 +1,38 @@
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design Exp4JKOneShotCounter.ngc ...
+WARNING:NetListWriters:298 - No output is written to Exp4JKOneShotCounter.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   XLXI_34/XLXI_12/Mcompar_cnt1k_cmp_gt0000_lut<11 : 0> on block
+   Exp4JKOneShotCounter is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_7/Mcompar_cnt1_cmp_ge0000_lut<12 :
+   1> on block Exp4JKOneShotCounter is not reconstructed, because there are some
+   missing bus signals.
+  finished :Prep
+Writing EDIF netlist file Exp4JKOneShotCounter.edif ...
+ngc2edif: Total memory usage is 79180 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design Exp4JKOneShotCounter.ngc ...
+WARNING:NetListWriters:298 - No output is written to Exp4JKOneShotCounter.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   XLXI_34/XLXI_12/Mcompar_cnt1k_cmp_gt0000_lut<11 : 0> on block
+   Exp4JKOneShotCounter is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus XLXI_7/Mcompar_cnt100_cmp_ge0000_lut<11
+   : 1> on block Exp4JKOneShotCounter is not reconstructed, because there are
+   some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file Exp4JKOneShotCounter.edif ...
+ngc2edif: Total memory usage is 79180 kilobytes
+
