@@ -1,0 +1,22 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "ClkB8" LOC = B8;
+NET "DivClkOut" LOC = P4;
+NET "OneHzClkOut" LOC = G1;
+NET "isNeg" LOC = M5;
+NET "sseg[6]" LOC = L14;
+NET "sseg[5]" LOC = H12;
+NET "sseg[4]" LOC = N14;
+NET "sseg[3]" LOC = N11;
+NET "sseg[2]" LOC = P12;
+NET "sseg[1]" LOC = L13;
+NET "sseg[0]" LOC = M12;
+NET "anode[3]" LOC = F12;
+NET "anode[2]" LOC = J12;
+NET "anode[1]" LOC = M13;
+NET "anode[0]" LOC = K14;
+NET "N3sw" LOC = N3;
+NET "E2swYogi" LOC = E2;
+NET "F3swbooboo" LOC = F3;
+NET "G3swSnaggle" LOC = G3;
