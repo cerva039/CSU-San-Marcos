@@ -1,0 +1,42 @@
+#include <iostream>
+#include "CHpyramid.h"
+using namespace std;
+
+Pyramid::Pyramid()
+{
+  length=0;
+  height=0;
+  base=0;
+}
+
+Pyramid::Pyramid(int l, int h, int b)
+{
+  length=l;
+  height=h;
+  base=b;
+}
+
+void Pyramid::area()
+{
+  cout << "Area of triangular pyramid not defined..."<< endl;
+}
+
+void Pyramid::perimeter()
+{
+  int l1,l2,l3,l=length;//variables used to store perimeter lengths
+  cout << "enter side lengths of pyramid's perimeter: ";
+  cin >> l1 >> l2 >> l3;
+  l=l1+l2+l3;
+  cout << "Perimeter of Triangular pyramid is: "<< l << endl;
+}
+
+void Pyramid::volume()
+{
+  float l=length,b=base,h=height; 
+  float v; //variable used to store volume in formula
+  cout << "Enter in base area of triangle: "; cin >> b;
+  cout << "Enter in height of pyramid: "; cin >> h;
+  cout << "Enter in apothem length of pyramid: "; cin >> l;
+  v=(l*b*h)/3;
+  cout << "Volume of Triangular Pyramid is: "<<v<< endl;
+}

@@ -1,0 +1,17 @@
+#ifndef CIRCLE_H
+#define CIRCLE_H //file defined here to keep consistency in inherited values
+#include "CHshape.h" 
+
+class Circle : public Shape //inheriting from Shape's public values
+{
+ private:
+  int radius; //self explanatory. It's the value used to calculate radius. Passed as "r" throughout corresponding cpp file, to allow for easier formula typing 
+ public:
+  Circle();
+  Circle(int);
+  void area();//this function calulates area of Circle
+  void perimeter();//Calculates perimeter of circle
+  void volume();//Because Circle's have no defined volume, this merely displays a console message stating that. It would otherwise calculate volume. 
+};
+
+#endif

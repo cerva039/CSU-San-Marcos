@@ -1,0 +1,23 @@
+#include <iostream>
+#include "CHshape.h"
+using namespace std;
+
+Shape::Shape()//Constructor. Because there are no variables, there are none to initialize. 
+{
+
+}
+
+void Shape::area()
+{
+  cout << "Area of Shape not defined..." << endl;//default message used in case of missing child class function
+}
+
+void Shape::perimeter()
+{
+  cout << "Perimeter of Shape not defined..." << endl; //default message like above
+}
+
+void Shape::volume()
+{
+  cout << "Volume of Shape not defined..." << endl; //default message like above
+}

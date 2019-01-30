@@ -1,0 +1,158 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+const int MAXSIZE=255;//used for arrays, specifically the string arrays to allow for messages of any length
+void encrypt(char *p[]);//encypt function
+void decrypt(char *p[]);//decrypt function
+void fillArrAtbash(char *p[]);//array function that initializes atbash array with characters read from atbashTable.txt
+
+int main(int argc, char *argv[])
+{
+  int choice=1;//variable used to determine option in while-switch menu
+               //choice set to be 1, to ensure it runs while loop.
+  char *atbash[52];//string array initialized to carry cipher letters
+  fillArrAtbash(atbash);//function that initializes atbash array to hold cipher letters
+
+  printf("Type in 1 to encypt message.txt\nType in 2 to decrypt atbash.txt\nType in any other value to exit program.\n");
+  while((choice==1) || (choice==2))
+    {
+      scanf("%d", &choice);
+      switch(choice)
+	{
+	case 1:
+	  encrypt(atbash);
+	  break;
+	case 2:
+	  decrypt(atbash);
+	  break;
+	default: printf("Goodbye.\n");
+	}
+    }
+  return 0;
+}
+
+void fillArrAtbash(char *p[])
+{
+  FILE * fpointer;//declares and opens the file
+  fpointer = fopen("atbashTable.txt", "r");
+  
+  int i = 0;//variable used to determine position in array
+  char hold[MAXSIZE];//maximum size determined for txt file being loaded into array P
+  char * temp;//token char variable
+
+  // Store's Atbash cipher letters one by one
+  while(!feof(fpointer))
+    {
+      fgets(hold, MAXSIZE, fpointer);//reads until end of file, or MAXSIZE amount of characters. In this case, until end of the file, about 52 characters
+      temp = strtok(hold, "\n");//removing new lines("\n") being created from txt file
+    p[i] = malloc(strlen(hold)+1);//allocating requested memory, in this case creating the requested memory length per letter per array slot.
+    strcpy(p[i], hold);//copies string/char's from hold, into array P
+    //printf("%s \n",hold);//Used here to test input of string characters
+    i++;//increments spot in p array
+  }
+  fclose(fpointer);//closes the file
+}
+
+void encrypt(char *p[])
+{
+ 
+  FILE * fpointer1;//carries original message
+  FILE * fpointer2;//carries original message, but also meant to be encrypted
+  fpointer1=fopen("message.txt","r");
+  fpointer2=fopen("message.txt","r");
+
+  char tempHold[MAXSIZE];//temporary array used to display message.txt
+  char hold[MAXSIZE];//array used in calculations to display encrypted message
+  char s;//used in ASCII calculations, when s variable becomes casted as int
+  int i;//used in for statement
+  int temp;//used for ASCII calculations
+  int len;//used to gauge length of arrays, or specifically message length of txt files stored into arrays
+
+  while(!feof(fpointer1))
+    {
+      fgets(tempHold, MAXSIZE, fpointer1);//will display until end of file, or until it displays MAXSIZE characters, whichever happens first. In this case, until end of file.
+      printf("%s",tempHold);//displays each of the letters stored in "temp" variable
+    }
+
+  fclose(fpointer1);//closes file, to prevent further read/write commands
+  printf("\n==============================================\n");  
+
+  while(!feof(fpointer2))
+    {      
+      fgets(hold, MAXSIZE, fpointer2);//reads until end of file, or MAXSIZE characters
+      len = strlen(hold);//len used to gauge amount of text stored in message.txt
+      for (i=0; i < len; i++)//cycles up to maximum length of arrays
+	{
+	  s = hold[i];//char s is equal to i'th position in hold array
+	  if(islower(s))//checks if "s" is lowercase, and makes appropriate ASCII calculation
+	    {
+	      temp = (int)s-97;//casts char s as an int, and subtracts off of 97. This correlates to the ASCII code for the alphabet
+	      if ((temp >= 0) && (temp <= 25))//0 to 25 correlates to a to z, as defined by atbashTable.txt
+		printf("%s", p[temp]);
+	    }
+	  else if(isupper(s))//checks if char s is uppercase, and makes appropriate calculation
+	    {
+	      temp=(int)s-39;
+	      if ((temp >= 26) && (temp <= 52))//26 to 52 correlates to A to Z
+                printf("%s", p[temp]);
+	    }	    
+	  else //if there's no defined encryption value, such as a comma or space, it simply just prints a space
+	    {
+	      printf(" ");
+	    }
+	}
+      printf("\n");          
+    }
+  fclose(fpointer2);
+  printf("\n");
+}
+
+
+
+
+void decrypt(char *p[])//Variables used throughout this function largely mirror the ones used in Decrypt function. Specific differences will only be pointed out
+{
+  FILE *fpointer1;
+  FILE *fpointer2;
+  fpointer1 = fopen("atbash.txt", "r");
+  fpointer2 = fopen("atbash.txt", "r");//pulls up and reads decrypted message file
+
+  char tempHold[MAXSIZE];
+  char hold[MAXSIZE];
+  char s;
+  int len,i=0,temp;
+  while(!feof(fpointer1))
+    {
+      fgets(tempHold, MAXSIZE, fpointer1);
+      printf("%s", tempHold);
+    }
+  fclose(fpointer1);
+
+  while(!feof(fpointer2))
+    {
+      fgets(hold, MAXSIZE, fpointer2);//reads until end of file, or first 255 bytes worth of characters
+      len = strlen(hold);//len used to gauge amount of text stored in message.txt      
+      for (i=0; i < len; i++)//cycls up to maximum length of array
+        {
+          s = hold[i];//char s is equal to i'th position in hold array
+          if(islower(s))//checks if "s" is lowercase, and makes appropriate ASCII calculation
+            {
+              temp = (int)s-97;//casts char s as an int, and subtracts off of 97. This correlates to the ASCII code for the alphabet
+              if ((temp >= 0) && (temp <= 25))//0 to 25 correlates to a to z, as defined by atbashTable.txt
+                printf("%s", p[temp]);
+            }
+          else if(isupper(s))//checks if char s is uppercase, and makes appropriate calculation
+            {
+              temp=(int)s-39;
+              if ((temp >= 26) && (temp <= 52))//26 to 52 correlates to uppercase A to Z
+                printf("%s", p[temp]);
+            }
+          else //if there's no defined encryption value, such as a comma or space, it simply just prints a space
+            {
+              printf(" ");
+            } 
+        }
+      printf("\n");
+    }
+    fclose(fpointer2);//closes file
+}

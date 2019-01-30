@@ -1,0 +1,15 @@
+#include "CHtriangle.h"
+
+class Pyramid : public Triangle
+{
+ private:
+  int length;
+  int height;
+  int base;
+ public:
+  Pyramid();
+  Pyramid(int, int, int);
+  void area();
+  void perimeter();
+  void volume();
+};

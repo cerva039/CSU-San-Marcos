@@ -1,0 +1,19 @@
+#ifndef TRIANGLE_H
+#define TRIANGLE_H//Definitions used here to allow for consisting inherited values for child classes
+#include "CHpolygon.h"
+
+class Triangle : public Polygon//inheriting Polygon's public values
+{
+ private:
+  int length;//Stores length, used in area formula. Passed as "l" in corresponding cpp file to allow for easier formulaic typing
+  int width;//Stores width, used in area formula. Passed as "w" in corresponding cpp file to allow for easier formulaic typing
+  int base;//Stores base, used in area calulation. Passed as "b" in corresponding cpp file to allow for easier formulaic typing
+ public:
+  Triangle();
+  Triangle(int,int,int,float,int);
+  void area();//calculates and displays Triangle area
+  void perimeter();//calculates and displays Triangle perimeter
+  void volume();//Because volume for triangles are not defined, this displays a message stating that fact to the user
+
+};
+#endif

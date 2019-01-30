@@ -1,0 +1,90 @@
+/* 
+The member lists are organized as [person, Standard] or [Standard,person], where Standard 
+are the two "standard houses" being compared to.
+*/
+person(X,[X|_]).
+person(X,[_|Y]) :- person(X,Y).
+
+
+
+/*
+left_right defines the houses that were stated to be "to the right" of 
+other houses, while also being compared to Standard to recursively define 
+their true position. L is the original condo, R is the "to the right of" condo
+*/
+left_right(L,R,[L,R,_,_,_]).
+left_right(L,R,[_,L,R,_,_]).
+left_right(L,R,[_,_,L,R,_]).
+left_right(L,R,[_,_,_,L,R]).
+
+
+
+/*
+next_to defines condos that were stated to be "next to" other condos, 
+while also being compared to S to recursively figure out their position 
+relative to other condoes. Only if it it fulfills the above left_right
+definition, does it fulfill the requirement of being "next to" a condo.
+*/
+next_to(X,Y,List) :- left_right(X,Y,List).
+next_to(X,Y,List) :- left_right(Y,X,List).
+
+
+/*
+This statements below are to allow input to directly find who is in possession 
+of which condo/food/etc, instead of having to input for all condos.
+At the query, type "tennis_condo(Owner, Condo)." or "pecan(Owner)." or "white(Owner).", as
+they work only if an "Owner" is in possession of any of the inputted attributes. They work by first recursively defining the lists of each of the combinations, and then pulls out the "person" list that matches the attributes.
+*/
+tennis_condo(Owner, Condo) :-
+	solve(Standard),
+	person([Condo,Owner,_,_,tennis],Standard).
+pecan(Owner) :-
+        solve(Standard),
+        person([_,Owner,_,pecan,_],Standard).
+white(Owner):-
+	solve(Standard),
+	person([white,Owner,_,_,_],Standard).	
+pecan_condo(Owner, Condo):-
+	solve(Standard),
+	person([Condo,Owner,_,pecan,_],Standard).
+
+
+/*
+Stanard is the house with the Italian person, and the house with the blueberry ice cream eater. 
+Their place in the list as being in the first and third position is because this is stated by 
+the hints #3, #14. Because of this, we're using the houses as the "Standard" for everything 
+else to be compared to, hence the "Standard" being chosen as the name to represent them.
+*/
+
+solve(Standard) :-
+	Standard = [[_,italian,_,_,_],_,[_,_,_,blueberry,_],_,_],
+	left_right([yellow,_,_,_,_],[green,_,_,_,_],Standard),
+        next_to([_,_,pizza,_,_],[_,_,_,_,hockey],Standard),
+	next_to([_,italian,_,_,_],[blue,_,_,_,_],Standard),
+	next_to([_,_,burger,_,_],[_,_,_,_,soccer],Standard),
+        person([red,brazilian,_,_,_],Standard),
+        person([_,canadian,_,_,golf],Standard),
+        person([yellow,_,burger,_,_],Standard),
+        person([_,_,nachos,_,basketball],Standard),
+        person([_,_,oreo,chocolate,_],Standard),
+        person([_,dutch,_,vanilla,_],Standard),
+        person([_,french,fries,_,_],Standard),
+        person([green,_,_,strawberry,_],Standard),
+        person([white,_,_,_,_],Standard),
+	person([_,_,_,pecan,_],Standard),
+        person([_,_,_,_,tennis],Standard).
+
+/*
+each condo is organized as...
+[Color,Nationality,Food,IceCream,Sport]
+where Stanard is the list of 5 condos. Three "additional" houses were added, because
+they're supposed to represent the missing variables that we're not stated in the hints,
+in other words the condos we're supposed to solve for: 
+"Who lives in the white condo, who eats Pecan ice cream, and who plays Tennis."
+*/
+
+/*
+At the query type, without quotes,: "solve([A,B,C,D,E])."
+the uppercase letters can be substituted with other letters(or even whole words), but there
+MUST be five letters total, with the first letter being capitalized. They're representative of each of the condos being compared to each other.
+*/

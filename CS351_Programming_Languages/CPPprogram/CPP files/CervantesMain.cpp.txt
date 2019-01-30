@@ -1,0 +1,89 @@
+//Name: Christopher Cervantes-Hernandez
+//Class: CS351
+//Purpose: To calculate properties of various shapes via 
+//         inherited class fils
+
+#include <iostream>
+#include "CHcircle.h"
+#include "CHcylinder.h"
+#include "CHtriangle.h"
+#include "CHpyramid.h"
+#include "CHsquare.h"
+using namespace std;
+
+int main()
+{
+  Shape *ptr1;//Shape made into abastract class pointer, to allow for simple passing of values
+  Polygon *ptr2;//Polygon made into astract class pointer, to allow for simple passing of values
+  cout << "===============================================\nHello, user. Please type in a number to the corresponding shape to calculate its properties:\n";
+  cout << "===============================================\n";
+  cout << "1. Circle\n2. Cylinder\n3. Triangle\n4. Pyramid\n5. Square\n6. EXIT PROGRAM\n===============================================\n";
+
+  int v=1,w=1,x=2,y=3,z=4;//default values used to pass onto classes. Primarily used to test functionality of programs, as they end up getting overwritten by user input
+  char grade;//char variable used in below switch statement
+  //instantiations of shape objects
+  Circle cir(x);
+  Cylinder cyl(x,y);
+  Triangle tri(w,x,y,z,v);
+  Pyramid pyr(x,y,z);
+  Square sq(x,y);
+
+  //the following while+switch statements cycle through abstract class pointers, and executes area,perimeter and volume functions of a chosen shape
+  while(true)
+    {
+      cout << "\n\nEnter shape value: ";
+      cin >> grade;
+      switch(grade)
+	{
+	case '1': 
+	  cout << "=====CIRCLE====================================" << endl;
+	  ptr1 = &cir;
+	  ptr1 -> area();
+	  ptr1 -> perimeter();
+	  ptr1 -> volume();
+	  cout << "===============================================" << endl;
+	  break;
+	  
+	case '2':
+	  cout << "=====CYLINDER==================================" << endl;
+	  ptr1 = &cyl;
+	  ptr1 -> area();
+	  ptr1 -> perimeter();
+	  ptr1 -> volume();
+	  cout << "===============================================" << endl;
+	  break;
+	  
+	case '3':
+	  cout << "=====TRIANGLE==================================" << endl;
+	  ptr2 = &tri;
+	  ptr2 -> area();
+	  ptr2 -> perimeter();
+	  ptr2 -> volume();
+	  cout << "===============================================" << endl;
+	  break;
+	  
+	case '4':
+	  cout << "=====PYRAMID===================================" << endl;
+	  ptr2=&pyr;
+	  ptr2 -> area();
+	  ptr2 -> perimeter();
+	  ptr2 -> volume();
+	  cout << "===============================================" << endl;
+	  break;
+	  
+	case '5':
+	  cout << "=====SQUARE====================================" << endl;
+	  ptr2 = &sq;
+	  ptr2 -> area();
+	  ptr2 -> perimeter();
+	  ptr2 -> volume();
+	  cout << "===============================================" << endl;
+	  break;
+	  
+	case '6': return false;break;//returns false to end while-loop, because while's condition executes only when true
+
+	default: cout << "Invalid value. Please type in 1 for circle, 2 for cylinder, 3 for triangle, 4 for pyramid, 5 for square, or 6 to exit program."<< endl;
+	}
+    }
+  return 0;
+}

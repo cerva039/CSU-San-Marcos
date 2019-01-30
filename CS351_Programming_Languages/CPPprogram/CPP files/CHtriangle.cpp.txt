@@ -1,0 +1,39 @@
+#include <iostream>
+#include "CHtriangle.h"
+using namespace std;
+
+Triangle::Triangle()
+{
+  length=0;
+  width=0;
+  base=0;
+}
+
+Triangle::Triangle(int l, int w, int b, float a, int p)//length, width, base passed as "l" "w" and "b" respectively throughout class
+{
+  length=l;
+  width=w;
+  base=b;
+}
+
+void Triangle::area()
+{
+  int l=length,w=width;
+  float a;//variable used to store area
+  a=(l*w)/2;
+  cout << "Area of triangle is: " << a << endl;
+}
+
+void Triangle::volume()
+{
+  cout << "Triangle volume has no defined formula." << endl;
+}
+
+void Triangle::perimeter()
+{
+  int p, s1,s2,s3;
+  cout << "What is the length of the three sides?\nSide 1: ";
+  cin >> s1; cout << "\nSide2: "; cin >> s2;
+  p=s1+s2+s3;//perimeter formula for triangle
+  cout << "Perimeter of triangle is: " << p << endl;
+}

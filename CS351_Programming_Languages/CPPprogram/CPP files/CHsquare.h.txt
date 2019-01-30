@@ -1,0 +1,14 @@
+#include "CHpolygon.h"
+
+class Square : public Polygon//inheriting from Polygon's public values
+{
+ private:
+  int length;//variable used to store length, and also used to calculate area. Passed as "l" throughout functions to allow for easier formula typing
+  int width;//variable used to store width, and also used to calculate area. Passed as "w" throughout functions to allow for easier formula typing
+ public:
+  Square();
+  Square(int,int);
+  void area();//outputs area value of square, using width and length values
+  void perimeter();//outputs perimeter value of square
+  void volume();//doesn't output volume for square, because it's not defined. Instead it displays to the user that it cant calculate volume
+};

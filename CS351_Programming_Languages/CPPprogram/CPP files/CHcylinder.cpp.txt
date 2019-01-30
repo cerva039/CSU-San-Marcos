@@ -1,0 +1,38 @@
+#include <iostream>
+#include "CHcylinder.h"
+using namespace std;
+
+const float PI=3.14;//Because Pi is a constant value in mathematics, Pi here has also been defind as constant to not only allow for recognizable typing, but to force consistent value of pi, to prevent issues in the necessary formulas.
+
+Cylinder::Cylinder()//constructor initializing default values
+{
+  radius=0;
+  height=0;
+}
+
+Cylinder::Cylinder(int r, int h)//radius and height passed as "r" and "h" respectively. This allows to conveniently type in formulas in below functions
+{
+  radius=r;
+  height=h;
+}
+
+void Cylinder::area()
+{
+  int r=radius, h=height;
+  float a;//variable used to store and display area
+  a= (2*PI*r*h)+(2*PI*r*r); //Perimeter formula of Cylinder. Paranthesis used to allow for easier reading of code. Area=2PIrh + 2PI(r^2)
+  cout << "Area of cylinder is:" << a << endl;
+}
+
+void Cylinder::perimeter()
+{
+  cout << "Perimter of cylinder is: " << endl;
+}
+
+void Cylinder:: volume()
+{
+  int r=radius, h=height;
+  float v;//variable used to store volume of cylinder shape
+  v=PI*(r*r)*h;//Volume formula of cylinder
+  cout << "Volume of Cylinder is: " << v << endl;
+}

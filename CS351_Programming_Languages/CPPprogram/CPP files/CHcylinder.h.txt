@@ -1,0 +1,16 @@
+#include "CHcircle.h"
+
+class Cylinder : public Circle//This class inherits values from the Circle's public class, which in turn inherits from the Shape class's public values
+{
+ private: 
+  int radius;//It's the value used to calculate radius. Passed as "r" throughout corresponding cpp file, to allow for easier formula typing
+  int height;//It's the value used to calculate height. Passed as "h" throughout corresponding cpp file, to allow for easier formula typing
+
+ public:
+  Cylinder();
+  Cylinder(int,int);
+  void area();//This function simply calculates and displays area of cylinder shape
+  void perimeter();//This function simply calculates and displays perimeter of cylinder shape
+  void volume();//This fuunctions calculats/displays volume of cylinder shape
+
+};

@@ -1,0 +1,12 @@
+#ifndef POLYGON_H
+#define POLYGON_H//definition used to here, to allow for consistent inheriting for child classes
+#include "CHshape.h"
+
+class Polygon : public Shape //inheriting Shape's public class
+{
+ public:
+  Polygon();//constructor function
+};
+#endif
+
+//This class file has no defined formulas, or anything meaningful to display to the user. This class is merely used as an abstract class variable in the main program, to allow for convenient passing of values. It otherwise does nothing on its own.

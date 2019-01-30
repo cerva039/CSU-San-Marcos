@@ -1,0 +1,8 @@
+#include <iostream>
+#include "CHpolygon.h"
+using namespace std;
+
+Polygon::Polygon()//Constructor function. Because this class file otherwise does nothing on its own, it requires no variables to initialize.
+{
+
+}

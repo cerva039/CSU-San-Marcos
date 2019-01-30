@@ -1,0 +1,40 @@
+#ifndef CIRCLE_CPP
+#define CIRCLE_CPP
+
+#include <iostream>
+#include "CHcircle.h"
+using namespace std;
+const float PI=3.14;//Because Pi is a constant value in mathematics, Pi here has also been defind as constant to not only allow for recognizable typing, but to force consistent value of pi, to prevent issues in the necessary formulas.
+
+Circle::Circle()//constructor
+{
+  radius=0;
+}
+
+Circle::Circle(int r)//radius passed as "r" to allow for easier formula typing in the below functions.
+{
+  radius=r;
+}
+
+void Circle::area()//area function to calculate and display function to user
+{
+  int r=radius;//allows radius to be read as "r"
+  cout << "Enter value for radius: "; cin >> r;
+  float a;//Variable used to store area
+  a=PI*r*r;//Radius formula for circles
+  cout << "Area of the Circle shape is: " << a << endl;
+}
+
+void Circle::perimeter()//Perimeter function to calculat and display values to user
+{
+  int r=radius;//allows radius to be read as "r"
+  float p;//Variable used to store perimeter
+  p=2*PI*r;//Perimeter formula for circles
+  cout << "Perimeter of the circle is: " << p << endl;
+}
+
+void Circle::volume()//No volume for circle is defined, so this function does no calculations
+{
+  cout << "Volume not defined for circles..." << endl;
+}
+#endif

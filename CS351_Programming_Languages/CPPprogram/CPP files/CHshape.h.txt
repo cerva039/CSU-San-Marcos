@@ -1,0 +1,13 @@
+#ifndef SHAPE_H
+#define SHAPE_H//Definitions used here to allow for consisting inheriting for child classes.
+
+class Shape
+{
+ public:
+  Shape();//constructor
+  virtual void area();//This function outputs area of above Shape function value, or shape's child classes(circle, cylinder, square, etc).
+  virtual void perimeter();//outputs perimeter of Shape, or shape's child classes
+  virtual void volume(); //outputs volume of Shape, or shape's child classes
+};
+
+#endif

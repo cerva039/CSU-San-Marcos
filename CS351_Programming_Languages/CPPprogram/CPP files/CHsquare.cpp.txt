@@ -1,0 +1,34 @@
+#include <iostream>
+#include "CHsquare.h"
+using namespace std;
+
+Square::Square()//constructor initializing length and width to default values
+{
+  length=0;
+  width=0;
+}
+
+Square::Square(int l, int w)//length and width passed as "l" and "w" respectively to allow for easier typing in formulas used in below functions
+{
+  length=l;
+  width=w;
+}
+
+void Square::area()
+{
+  int a, l=length,w=width;//variable "a" used to store perimeter. "l" and "w" both used to store length and width respectively, to allow for convenient typing
+  a = l*w;//formula "a" used to store area 
+  cout << "Area of Square: " << a << endl;
+}
+
+void Square::perimeter()
+{
+  int p,l=length,w=width;//variable p used to store perimeter. "l" and "w" both used to store length and width respectively, to allow for convenient typing
+  p=(2*l) + (2*w);//formula used in calculating square perimeter
+  cout << "Perimeter of square: " << p << endl;
+}
+
+void Square::volume()
+{
+  cout << "Volume not defined for Squares..." << endl;
+}
