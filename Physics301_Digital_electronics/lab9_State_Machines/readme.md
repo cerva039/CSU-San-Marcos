@@ -1,0 +1,1 @@
+Lab focused upon state machines, and more importantly the "programming" of a state machine. We start with a basic Finite State Machine and work our way up to a Mealy Machine: A device allowing us to influence the outcome during the clocked cycles the machine is undertaking on its own.
