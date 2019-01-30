@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Chris\Documents\School\7th Year\Fall 2018\PHYS301JohnYates\PHYS301-master\Lab8\Exp1Div2RippleCounter\Exp1Div2RippleCounter.ncd
+OUTFILE=C:\Users\Chris\Documents\School\7th Year\Fall 2018\PHYS301JohnYates\PHYS301-master\Lab8\Exp1Div2RippleCounter\Exp1Div2RippleCounter.bit
+FAMILY=Spartan3E
+PART=xc3s100e-4cp132
+WORKINGDIR=C:\Users\Chris\Documents\School\7th Year\Fall 2018\PHYS301JohnYates\PHYS301-master\Lab8\Exp1Div2RippleCounter
+LICENSE=WebPack
+USER_INFO=211594250_0_0_673

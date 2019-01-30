@@ -1,0 +1,9 @@
+
+
+NET "Clk" LOC = B8;
+NET "ClkOut" LOC = P7;
+NET "Q0" LOC = M5;
+
+# PlanAhead Generated physical constraints 
+
+NET "Q1" LOC = M11;
